@@ -1,0 +1,19 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+from frappe import _
+
+def get_data():
+            return [
+                {
+                    "label": _("Legal Reports France"),
+                    "items": [
+                                {
+                                            "type": "report",
+                                            "name": "fichier_des_ecritures_comptables_[fec]",
+                                            "doctype": "GL Entry",
+                                            "is_query_report": True,
+                                }
+                    ]
+                }
+            ]
+        
