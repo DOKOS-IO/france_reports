@@ -11,6 +11,8 @@ app_color = "#c5cae9"
 app_email = "hello@dokos.io"
 app_license = "GPLv3"
 
+fixtures = ["Custom Field"]
+
 # Includes in <head>
 # ------------------
 
