@@ -17,9 +17,9 @@ Use Instructions
 ----------------
 >!!! THE CHART OF ACCOUNT MUST BE FORMATTED AS FOLLOWING: ACCOUNT NUMBER + "-" + ACCOUNT NAME (Example: "	701-Ventes de produits finis") !!!
 
- 1. Generate the report and export it in .csv format (Menu > Export)
- 2. Open in it Google Sheets or Libre Office and save it as tabular separated file (but keep the .csv extension)
- 3. Rename the file as SIREN Number + FEC + Fiscal Year End Date (SirenFECYYYYMMDD)
+ 1. Generate the report and export it in .csv format (Use the export button in the top right corner)
+ 2. Check that its extension is ".csv" and its data are separated by tabs
+ 3. Check that the file's name is formated as follow: SIREN Number + FEC + Fiscal Year End Date (SirenFECYYYYMMDD)
 
 Testing Instruction
 -------------------

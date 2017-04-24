@@ -71,7 +71,7 @@ frappe.query_reports["Fichier des Ecritures Comptables [FEC]"] = {
 						   function(row) {
 						       return [row.splice(1)];
 						   });
-				/*downloadify(result, null, title);*/
+				downloadify(result, null, title);
 			    }
 			});
 			
