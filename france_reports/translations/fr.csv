@@ -1,0 +1,30 @@
+Custom Field - label: Customer-account_responsible,Account Responsible,Responsable du Compte
+apps/france_reports/france_reports/france_reports/report/fichier_des_ecritures_comptables_[fec]/fichier_des_ecritures_comptables_[fec].py +44,CompAuxLib,CompAuxLib
+apps/france_reports/france_reports/france_reports/report/fichier_des_ecritures_comptables_[fec]/fichier_des_ecritures_comptables_[fec].py +44,CompAuxNum,CompAuxNum
+Custom Field - label: Print Settings-compact_item_print,Compact Item Print,Impression de l'Article Compacté
+apps/france_reports/france_reports/france_reports/report/fichier_des_ecritures_comptables_[fec]/fichier_des_ecritures_comptables_[fec].py +27,Company,Société
+apps/france_reports/france_reports/france_reports/report/fichier_des_ecritures_comptables_[fec]/fichier_des_ecritures_comptables_[fec].py +43,CompteLib,CompteLib
+apps/france_reports/france_reports/france_reports/report/fichier_des_ecritures_comptables_[fec]/fichier_des_ecritures_comptables_[fec].py +43,CompteNum,CompteNum
+apps/france_reports/france_reports/france_reports/report/fichier_des_ecritures_comptables_[fec]/fichier_des_ecritures_comptables_[fec].py +46,Credit,Crédit
+apps/france_reports/france_reports/france_reports/report/fichier_des_ecritures_comptables_[fec]/fichier_des_ecritures_comptables_[fec].py +47,DateLet,DateLet
+apps/france_reports/france_reports/france_reports/report/fichier_des_ecritures_comptables_[fec]/fichier_des_ecritures_comptables_[fec].py +46,Debit,Débit
+apps/france_reports/france_reports/france_reports/report/fichier_des_ecritures_comptables_[fec]/fichier_des_ecritures_comptables_[fec].py +42,EcritureDate,EcritureDate
+apps/france_reports/france_reports/france_reports/report/fichier_des_ecritures_comptables_[fec]/fichier_des_ecritures_comptables_[fec].py +47,EcritureLet,EcritureLet
+apps/france_reports/france_reports/france_reports/report/fichier_des_ecritures_comptables_[fec]/fichier_des_ecritures_comptables_[fec].py +46,EcritureLib,EcritureLib
+apps/france_reports/france_reports/france_reports/report/fichier_des_ecritures_comptables_[fec]/fichier_des_ecritures_comptables_[fec].py +42,EcritureNum,EcritureNum
+apps/france_reports/france_reports/france_reports/report/fichier_des_ecritures_comptables_[fec]/fichier_des_ecritures_comptables_[fec].js +41,Export,Exporter
+apps/france_reports/france_reports/france_reports/report/fichier_des_ecritures_comptables_[fec]/fichier_des_ecritures_comptables_[fec].js +88,Export not allowed. You need {0} role to export.,Pas autorisé à exporter. Vous devez avoir le rôle {0} pour exporter.
+apps/france_reports/france_reports/france_reports/report/fichier_des_ecritures_comptables_[fec]/fichier_des_ecritures_comptables_[fec].py +30,Fiscal Year,Exercice Fiscal
+apps/france_reports/france_reports/config/desktop.py +12,France Reports,Rapports Légaux
+apps/france_reports/france_reports/france_reports/report/fichier_des_ecritures_comptables_[fec]/fichier_des_ecritures_comptables_[fec].py +48,Idevise,Idevise
+Custom Field - label: Item-informations_techniques,Informations techniques,Informations techniques
+apps/france_reports/france_reports/france_reports/report/fichier_des_ecritures_comptables_[fec]/fichier_des_ecritures_comptables_[fec].py +41,JournalCode,JournalCode
+apps/france_reports/france_reports/france_reports/report/fichier_des_ecritures_comptables_[fec]/fichier_des_ecritures_comptables_[fec].py +41,JournalLib,JournalLib
+Custom Field - label: Lead-kanban_column,Kanban Column,Colonne Kanban
+apps/france_reports/france_reports/config/france_reports.py +8,Legal Reports France,Rapports Légaux France
+apps/france_reports/france_reports/france_reports/report/fichier_des_ecritures_comptables_[fec]/fichier_des_ecritures_comptables_[fec].py +48,Montantdevise,Montantdevise
+apps/france_reports/france_reports/france_reports/report/fichier_des_ecritures_comptables_[fec]/fichier_des_ecritures_comptables_[fec].py +45,PieceDate,PieceDate
+apps/france_reports/france_reports/france_reports/report/fichier_des_ecritures_comptables_[fec]/fichier_des_ecritures_comptables_[fec].py +45,PieceRef,PieceRef
+apps/france_reports/france_reports/france_reports/report/fichier_des_ecritures_comptables_[fec]/fichier_des_ecritures_comptables_[fec].js +56,Please register the SIREN number in the company information file,Veuillez enregistrer le numéro de SIREN dans la fiche d’information de la société
+apps/france_reports/france_reports/france_reports/report/fichier_des_ecritures_comptables_[fec]/fichier_des_ecritures_comptables_[fec].py +47,ValidDate,ValidDate
+apps/france_reports/france_reports/france_reports/report/fichier_des_ecritures_comptables_[fec]/fichier_des_ecritures_comptables_[fec].py +27,{0} is mandatory,{0} est obligatoire
