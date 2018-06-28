@@ -6,6 +6,7 @@ import frappe
 from frappe.utils import format_datetime
 from frappe import _
 from erpnext.accounts.utils import get_account_currency
+import re
 
 def execute(filters=None):
         account_details = {}
@@ -101,7 +102,7 @@ def get_result_as_list(data, filters):
 
                 JournalCode = d.get("voucher_no").split("-")[0]
 
-                EcritureNum = d.get("voucher_no").split("-")[-1]
+                EcritureNum = re.split("-|/", d.get("voucher_no"))[1]
 
                 EcritureDate = format_datetime(d.get("GlPostDate"), "yyyyMMdd")
 
