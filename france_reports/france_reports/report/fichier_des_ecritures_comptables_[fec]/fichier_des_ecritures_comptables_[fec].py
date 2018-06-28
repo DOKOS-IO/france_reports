@@ -65,24 +65,24 @@ def get_gl_entries(filters):
 
 	gl_entries = frappe.db.sql("""
 		select
-			gl.posting_date as GlPostDate, gl.account, gl.transaction_date, 
+			gl.posting_date as GlPostDate, gl.name as GlName, gl.account, gl.transaction_date, 
 			sum(gl.debit) as debit, sum(gl.credit) as credit,
                         sum(gl.debit_in_account_currency) as debitCurr, sum(gl.credit_in_account_currency) as creditCurr,
 			gl.voucher_type, gl.voucher_no, gl.against_voucher_type, 
                         gl.against_voucher, gl.account_currency, gl.against, 
                         gl.party_type, gl.party,
-                        inv.name as InvName, inv.posting_date as InvPostDate, 
-                        pur.name as PurName, inv.posting_date as PurPostDate,
-                        jnl.cheque_no as JnlRef, jnl.posting_date as JnlPostDate,
-                        pay.name as PayName, pay.posting_date as PayPostDate,
+                        inv.name as InvName, inv.title as InvTitle, inv.posting_date as InvPostDate, 
+                        pur.name as PurName, pur.title as PurTitle, pur.posting_date as PurPostDate,
+                        jnl.cheque_no as JnlRef, jnl.posting_date as JnlPostDate, jnl.title as JnlTitle,
+                        pay.name as PayName, pay.posting_date as PayPostDate, pay.title as PayTitle,
                         cus.customer_name, cus.name as cusName,
                         sup.supplier_name, sup.name as supName
  
 		from `tabGL Entry` gl 
-                    left join `tabSales Invoice` inv on gl.against_voucher = inv.name
-                    left join `tabPurchase Invoice` pur on gl.against_voucher = pur.name
-                    left join `tabJournal Entry` jnl on gl.against_voucher = jnl.name
-                    left join `tabPayment Entry` pay on gl.against_voucher = pay.name
+                    left join `tabSales Invoice` inv on gl.voucher_no = inv.name
+                    left join `tabPurchase Invoice` pur on gl.voucher_no = pur.name
+                    left join `tabJournal Entry` jnl on gl.voucher_no = jnl.name
+                    left join `tabPayment Entry` pay on gl.voucher_no = pay.name
                     left join `tabCustomer` cus on gl.party = cus.customer_name
                     left join `tabSupplier` sup on gl.party = sup.supplier_name
 		where gl.company=%(company)s and gl.fiscal_year=%(fiscal_year)s
@@ -122,8 +122,23 @@ def get_result_as_list(data, filters):
 
                 ValidDate = format_datetime(d.get("GlPostDate"), "yyyyMMdd")
                 
-                PieceRef = d.get("against_voucher") if d.get("against_voucher") else "Sans Reference"
+                PieceRef = d.get("voucher_no") if d.get("voucher_no") else "Sans Reference"
                 PieceDate = format_datetime(d.get("GlPostDate"), "yyyyMMdd")
+
+                if d.get("voucher_type") == "Sales Invoice":
+                        EcritureLib = d.get("InvTitle")
+
+                elif d.get("voucher_type") == "Purchase Invoice":
+                        EcritureLib = d.get("PurTitle")
+                        
+                elif d.get("voucher_type") == "Journal Entry":
+                        EcritureLib = d.get("JnlTitle")
+
+                elif d.get("voucher_type") == "Payment Entry":
+                        EcritureLib = d.get("PayTitle")
+
+                else:
+                        EcritureLib = d.get("voucher_type")
 
                 Idevise = d.get("account_currency")
 
@@ -134,7 +149,7 @@ def get_result_as_list(data, filters):
                         Montantdevise = d.get("debit") \
                                         if d.get("debit") != 0 else d.get("credit")
 
-                row = [JournalCode, d.get("voucher_type"), EcritureNum, EcritureDate, CompteNum, d.get("account"), CompAuxNum , CompAuxLib , PieceRef, PieceDate, d.get("voucher_no"), str(d.get("debit")).replace(".", ","), str(d.get("credit")).replace(".", ","), "", "", ValidDate, str(Montantdevise).replace(".", ","), Idevise ]
+                row = [JournalCode, d.get("voucher_type"), EcritureNum, EcritureDate, CompteNum, d.get("account"), CompAuxNum , CompAuxLib , PieceRef, PieceDate, EcritureLib, str(d.get("debit")).replace(".", ","), str(d.get("credit")).replace(".", ","), "", "", ValidDate, str(Montantdevise).replace(".", ","), Idevise ]
 
 		result.append(row)
 
