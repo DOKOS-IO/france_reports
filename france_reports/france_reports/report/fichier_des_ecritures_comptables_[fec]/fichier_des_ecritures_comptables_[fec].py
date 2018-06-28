@@ -122,25 +122,8 @@ def get_result_as_list(data, filters):
 
                 ValidDate = format_datetime(d.get("GlPostDate"), "yyyyMMdd")
                 
-                if d.get("against_voucher_type") == "Sales Invoice":
-                        PieceRef = d.get("InvName")
-                        PieceDate = format_datetime(d.get("InvPostDate"), "yyyyMMdd")
-
-                elif d.get("against_voucher_type") == "Purchase Invoice":
-                        PieceRef = d.get("PurName")
-                        PieceDate = format_datetime(d.get("PurPostDate"), "yyyyMMdd")
-                        
-                elif d.get("against_voucher_type") == "Journal Entry":
-                        PieceRef = d.get("JnlRef")
-                        PieceDate = format_datetime(d.get("JnlPostDate"), "yyyyMMdd")
-
-                elif d.get("against_voucher_type") == "Payment Entry":
-                        PieceRef = d.get("PayName")
-                        PieceDate = format_datetime(d.get("PayPostDate"), "yyyyMMdd")
-
-                else:
-                        PieceRef = "Aucune Reference"
-                        PieceDate = format_datetime(d.get("GlPostDate"), "yyyyMMdd")
+                PieceRef = d.get("against_voucher") if d.get("against_voucher") else "Sans Reference"
+                PieceDate = format_datetime(d.get("GlPostDate"), "yyyyMMdd")
 
                 Idevise = d.get("account_currency")
 
@@ -151,7 +134,7 @@ def get_result_as_list(data, filters):
                         Montantdevise = d.get("debit") \
                                         if d.get("debit") != 0 else d.get("credit")
 
-                row = [JournalCode, d.get("voucher_type"), EcritureNum, EcritureDate, CompteNum, d.get("account"), CompAuxNum , CompAuxLib , PieceRef, PieceDate, d.get("voucher_no"), d.get("debit"), d.get("credit"), "", "", ValidDate, Montantdevise, Idevise ]
+                row = [JournalCode, d.get("voucher_type"), EcritureNum, EcritureDate, CompteNum, d.get("account"), CompAuxNum , CompAuxLib , PieceRef, PieceDate, d.get("voucher_no"), str(d.get("debit")).replace(".", ","), str(d.get("credit")).replace(".", ","), "", "", ValidDate, str(Montantdevise).replace(".", ","), Idevise ]
 
 		result.append(row)
 
