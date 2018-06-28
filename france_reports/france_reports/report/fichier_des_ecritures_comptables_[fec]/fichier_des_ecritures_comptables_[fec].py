@@ -39,14 +39,14 @@ def set_account_currency(filters):
 
 def get_columns(filters):
 	columns = [
-		_("JournalCode") + ":Link/Againts Voucher:90", _("JournalLib") + ":Link/Against Voucher Type:90",
-		_("EcritureNum") + ":Dynamic Link:90", _("EcritureDate") + "::90",
-                _("CompteNum") + ":Link/Account:100", _("CompteLib") + ":Link/Account:200",
-                _("CompAuxNum") + "::90", _("CompAuxLib") + "::90",
-                _("PieceRef") + "::90", _("PieceDate") + "::90",
-                _("EcritureLib") + "::90", _("Debit") + "::90", _("Credit") + "::90",
-                _("EcritureLet") + "::90", _("DateLet") + "::90", _("ValidDate") + "::90",
-                _("Montantdevise") + "::90", _("Idevise") + "::90"
+		"JournalCode" + ":Link/Againts Voucher:90", "JournalLib" + ":Link/Against Voucher Type:90",
+		"EcritureNum" + ":Dynamic Link:90", "EcritureDate" + "::90",
+                "CompteNum" + ":Link/Account:100", "CompteLib" + ":Link/Account:200",
+                "CompAuxNum" + "::90", "CompAuxLib" + "::90",
+                "PieceRef" + "::90", "PieceDate" + "::90",
+                "EcritureLib" + "::90", "Debit" + "::90", "Credit" + "::90",
+                "EcritureLet" + "::90", "DateLet" + "::90", "ValidDate" + "::90",
+                "Montantdevise" + "::90", "Idevise" + "::90"
 	]
 
         return columns
