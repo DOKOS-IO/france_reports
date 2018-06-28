@@ -100,7 +100,7 @@ def get_result_as_list(data, filters):
         
 	for d in data:
 
-                JournalCode = d.get("voucher_no").split("-")[0]
+                JournalCode = re.split("-|/", d.get("voucher_no"))[0]
 
                 EcritureNum = re.split("-|/", d.get("voucher_no"))[1]
 
