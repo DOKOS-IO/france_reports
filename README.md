@@ -1,7 +1,7 @@
 ## France Reports
 
 This Frappe Application provides Specific Reports for France.
-It is compatible with frappe framework 8.0 and above and ERPNext 8.0 and above.
+It is compatible with frappe framework 8.0, 9.0, 10.0 and ERPNext 8.0, 9.0, 10.0.
 
 It provides the following report:
 
